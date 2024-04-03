@@ -5,8 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
     <title>Document</title>
+
+    <style>
+        .button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #button1 {
+        background-color: #0099ff;
+    }
+    #button2 {
+        background-color: #00ff6a;
+    }
+    #button3 {
+        background-color: #ff1900;
+    }
+    </style>
 </head>
 <body>
-    
+<button id="button1" class="button">Button 1</button>
+<button id="button2" class="button">Button 2</button>
+<button id="button3" class="button">Button 3</button>
+
+<button id="toggleButton">Widoczność</button>
+
+<div id="elementToToggle">
+    Magia
+</div>
+
+
+<input type="text" id="textInput">
+<button id="addToListButton">Dodaj do listy</button>
+<ul id="list"></ul>
+
 </body>
 </html>
