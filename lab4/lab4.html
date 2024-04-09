@@ -30,16 +30,40 @@
 <button id="button2" class="button">Button 2</button>
 <button id="button3" class="button">Button 3</button>
 
+
 <button id="toggleButton">Widoczność</button>
 
 <div id="elementToToggle">
     Magia
 </div>
 
+<input type="text" id="firstName" placeholder="Imię">
+<input type="text" id="lastName" placeholder="Nazwisko">
+<button id="addToTableButton">Add to Table</button>
 
-<input type="text" id="textInput">
+<input type="text" id="text">
 <button id="addToListButton">Dodaj do listy</button>
 <ul id="list"></ul>
+
+<table id="dataTable">
+      <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+      </tr>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+
+
+  <h2>Celsius to Fahrenheit Converter</h2>
+<input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+<button onclick="convertCelsiusToFahrenheit()">Convert</button>
+<p id="resultCelsiusToFahrenheit"></p>
+
+<h2>Fahrenheit to Celsius Converter</h2>
+<input type="number" id="fahrenheit" placeholder="Enter temperature in Fahrenheit">
+<button onclick="convertFahrenheitToCelsius()">Convert</button>
+<p id="resultFahrenheitToCelsius"></p>
 
 </body>
 </html>

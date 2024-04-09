@@ -51,10 +51,6 @@ if (age >= 18) {
     window.open("https://www.nickjr.com.pl/")
 }
 
-
-
-//dalej prośilbym robić jakiś latwiejsze zadania, ponieważ te dalnejsze zadania zrobiłem tylko z pomocą internetu albo więcej pokazywać przykładów na zajęciach
-
 function handleButtonClick(event) { 
     const buttons = document.querySelectorAll('.button');
     buttons.forEach(btn => {
@@ -80,6 +76,7 @@ function handleToggleButtonClick() {
     }
 }
 
+//na początek trzeba nacisnąć 2 razy na button
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.button');
     buttons.forEach(button => {
@@ -92,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function handleAddToListButtonClick() {
-    const textInput = document.getElementById('textInput');
+    const textInput = document.getElementById('text');
     const list = document.getElementById('list');
     const listItem = document.createElement('li');
     const inputValue = textInput.value.trim(); 
@@ -104,8 +101,71 @@ function handleAddToListButtonClick() {
     
 }
 }
-
 document.addEventListener('DOMContentLoaded', function() {
     const addToListButton = document.getElementById('addToListButton');
     addToListButton.addEventListener('click', handleAddToListButtonClick);
 });
+
+
+
+
+function handleAddToTableButtonClick() {
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const tableBody = document.getElementById('tableBody');
+
+    const firstName = firstNameInput.value.trim();
+    const lastName = lastNameInput.value.trim();
+
+    if (firstName !== "" && lastName !== "") {
+        const newRow = document.createElement('tr');
+        const firstNameCell = document.createElement('td');
+        firstNameCell.textContent = firstName;
+        const lastNameCell = document.createElement('td');
+        lastNameCell.textContent = lastName;
+        newRow.appendChild(firstNameCell);
+        newRow.appendChild(lastNameCell);
+        tableBody.appendChild(newRow);
+        firstNameInput.value = '';
+        lastNameInput.value = '';
+    } else {
+        alert("Pola imię i nazwisko nie mogą być puste");
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addToTableButton = document.getElementById('addToTableButton');
+    addToTableButton.addEventListener('click', handleAddToTableButtonClick);
+});
+
+
+// Z Celsiusza na Fahrenheita
+function convertCelsiusToFahrenheit() {
+    const celsiusInput = document.getElementById('celsius').value;
+    const resultCelsiusToFahrenheit = document.getElementById('resultCelsiusToFahrenheit');
+    
+    if (celsiusInput === '') {
+        resultCelsiusToFahrenheit.textContent = 'Please enter a temperature.';
+    } else {
+        const celsius = parseFloat(celsiusInput);
+        const fahrenheit = (celsius * 9/5) + 32;
+        resultCelsiusToFahrenheit.textContent = `${celsius}°C to ${fahrenheit.toFixed(2)}°F.`;
+    }
+}
+
+// Z Fahrenheita na Celsiusza
+function convertFahrenheitToCelsius() {
+    const fahrenheitInput = document.getElementById('fahrenheit').value;
+    const resultFahrenheitToCelsius = document.getElementById('resultFahrenheitToCelsius');
+    
+    if (fahrenheitInput === '') {
+        resultFahrenheitToCelsius.textContent = 'Enter a temperature';
+    } else {
+        const fahrenheit = parseFloat(fahrenheitInput);
+        const celsius = (fahrenheit - 32) * 5/9;
+        resultFahrenheitToCelsius.textContent = `${fahrenheit}°F to ${celsius.toFixed(2)}°C.`;
+    }
+}
+
+
+//zrobiłem 8 zadań
