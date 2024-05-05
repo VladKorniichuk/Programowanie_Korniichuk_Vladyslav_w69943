@@ -3,46 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
     <title>lab7</title>
 </head>
 <body>
-    <h2>-_-</h2>
 
-<form>
+<form id="myForm" onsubmit="return validateForm()">
   <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="fname" required><br>
+  <input type="text" id="fname" name="fname" required>
+  <div id="fname-error" class="error"></div>
+  <br>
 
   <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lname" required><br><br>
+  <input type="text" id="lname" name="lname" required>
+  <div id="lname-error" class="error"></div>
+  <br><br>
 
   <label for="email">Email:</label><br>     
-  <input type="text" id="email" name="email" required><br>
+  <input type="text" id="email" name="email" required>
+  <div id="email-error" class="error"></div>
+  <br>
 
   <label for="password">Password:</label><br>
-  <input type="password" id="password" name="password" required><br>
+  <input type="password" id="password" name="password" minlength="8" required>
+  <div id="password-error" class="error"></div>
+  <br>
+
+  <label for="confirmPassword">Confirm Password:</label><br>
+  <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
+  <div id="confirmPassword-error" class="error"></div>
+  <br>
 
   <label for="sex">Sex</label><br>
-  <input type="radio" id="age1" name="age">
-  <label for="age1">Man </label><br>
-  <input type="radio" id="age2" name="age">
-  <label for="age2">Woman</label><br> 
+  <input type="radio" id="male" name="gender" required>
+  <label for="male">Male </label><br>
+  <input type="radio" id="female" name="gender">
+  <label for="female">Female</label><br>
+  <div id="gender-error" class="error"></div>
+  <br>
 
-  <label for="Phone">Phone number: </label><br>
-  <input type="tel" id="Phone" name="Phone" placeholder="xxx-xxx-xxx"  maxlength="9" pattern="[0-9]{9}" required><br>
+  <label for="phone">Phone number: </label><br>
+  <input type="tel" id="phone" name="phone" placeholder="xxx-xxx-xxx"  maxlength="9" pattern="[0-9]{9}" required>
+  <div id="phone-error" class="error"></div>
+  <br>
 
   <label for="day">Birthday: </label><br>
-  <input type="date" id="day" name="day"><br>
+  <input type="date" id="birthday" name="birthday">
+  <div id="birthday-error" class="error"></div> 
+  <br>
 
-  <label for="countr">Mutterland: </label><br>
-  <input type="text" id="countr" name="countr"><br>
+  <label for="country">Country: </label><br>
+  <select id="country" name="country">
+    <option value="">Select country</option>
+    <option value="Poland">Poland</option>
+    <option value="Other">Other</option>
+  </select>
+  <br><br>
+
+  <label for="province">Province (text):</label><br>
+  <input type="text" id="province" name="province" disabled>
+  <br><br>
+
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" disabled> <br>
+
+  <input type="checkbox" id="sameAddress" name="sameAddress" checked>
+  <label for="sameAddress">Correspondence address is the same as residential address</label><br>
+
+  <div id="correspondenceAddress">
+    <label for="correspondenceAddress">Correspondence Address:</label><br>
+    <input type="text" id="correspondenceAddress" name="correspondenceAddress">
+  </div>
 
   <div>
     <input type="submit" value="Submit">
   </div>
 </form> 
-
-
 
 </body>
 </html>
